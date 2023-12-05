@@ -1,0 +1,482 @@
+[
+    {
+        "id": "9c4ad13bd31d0bea",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ab34e3163fa24f94",
+        "type": "inject",
+        "z": "9c4ad13bd31d0bea",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 220,
+        "wires": [
+            [
+                "1d58b2a5f01c6027",
+                "8daffe3e0bad49c0",
+                "ba79aeeea7d981d9",
+                "b0dca8e55576fd2b",
+                "4563caf2bc688bb5",
+                "9ec02a0dc9060ffe"
+            ]
+        ]
+    },
+    {
+        "id": "1d58b2a5f01c6027",
+        "type": "OpcUa-Item",
+        "z": "9c4ad13bd31d0bea",
+        "item": "ns=2;i=2",
+        "datatype": "String",
+        "value": "",
+        "name": "",
+        "x": 340,
+        "y": 220,
+        "wires": [
+            [
+                "6ea95bc3f6933452"
+            ]
+        ]
+    },
+    {
+        "id": "6ea95bc3f6933452",
+        "type": "OpcUa-Client",
+        "z": "9c4ad13bd31d0bea",
+        "endpoint": "096e16d6735c1a31",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 520,
+        "y": 220,
+        "wires": [
+            [
+                "21a83d9715e3b230"
+            ]
+        ]
+    },
+    {
+        "id": "8daffe3e0bad49c0",
+        "type": "OpcUa-Item",
+        "z": "9c4ad13bd31d0bea",
+        "item": "ns=2;i=3",
+        "datatype": "String",
+        "value": "",
+        "name": "",
+        "x": 340,
+        "y": 260,
+        "wires": [
+            [
+                "e255968d0c1f7d9f"
+            ]
+        ]
+    },
+    {
+        "id": "e255968d0c1f7d9f",
+        "type": "OpcUa-Client",
+        "z": "9c4ad13bd31d0bea",
+        "endpoint": "096e16d6735c1a31",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 520,
+        "y": 260,
+        "wires": [
+            [
+                "c6e343e548eb9888"
+            ]
+        ]
+    },
+    {
+        "id": "ba79aeeea7d981d9",
+        "type": "OpcUa-Item",
+        "z": "9c4ad13bd31d0bea",
+        "item": "ns=2;i=4",
+        "datatype": "String",
+        "value": "",
+        "name": "",
+        "x": 340,
+        "y": 300,
+        "wires": [
+            [
+                "c3086b1b2c61f01f"
+            ]
+        ]
+    },
+    {
+        "id": "c3086b1b2c61f01f",
+        "type": "OpcUa-Client",
+        "z": "9c4ad13bd31d0bea",
+        "endpoint": "096e16d6735c1a31",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 520,
+        "y": 300,
+        "wires": [
+            [
+                "2e2e7f57cb89c61d"
+            ]
+        ]
+    },
+    {
+        "id": "b0dca8e55576fd2b",
+        "type": "OpcUa-Item",
+        "z": "9c4ad13bd31d0bea",
+        "item": "ns=2;i=6",
+        "datatype": "String",
+        "value": "",
+        "name": "",
+        "x": 340,
+        "y": 340,
+        "wires": [
+            [
+                "6759aeeaaceb7bf5"
+            ]
+        ]
+    },
+    {
+        "id": "6759aeeaaceb7bf5",
+        "type": "OpcUa-Client",
+        "z": "9c4ad13bd31d0bea",
+        "endpoint": "096e16d6735c1a31",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 520,
+        "y": 340,
+        "wires": [
+            [
+                "9edace902f8441cc"
+            ]
+        ]
+    },
+    {
+        "id": "4563caf2bc688bb5",
+        "type": "OpcUa-Item",
+        "z": "9c4ad13bd31d0bea",
+        "item": "ns=2;i=7",
+        "datatype": "String",
+        "value": "",
+        "name": "",
+        "x": 340,
+        "y": 380,
+        "wires": [
+            [
+                "b9ec13345cf17077"
+            ]
+        ]
+    },
+    {
+        "id": "b9ec13345cf17077",
+        "type": "OpcUa-Client",
+        "z": "9c4ad13bd31d0bea",
+        "endpoint": "096e16d6735c1a31",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 520,
+        "y": 380,
+        "wires": [
+            [
+                "314d88c57bf83caf"
+            ]
+        ]
+    },
+    {
+        "id": "9ec02a0dc9060ffe",
+        "type": "OpcUa-Item",
+        "z": "9c4ad13bd31d0bea",
+        "item": "ns=2;i=8",
+        "datatype": "String",
+        "value": "",
+        "name": "",
+        "x": 340,
+        "y": 420,
+        "wires": [
+            [
+                "100a8d045a639ad0"
+            ]
+        ]
+    },
+    {
+        "id": "100a8d045a639ad0",
+        "type": "OpcUa-Client",
+        "z": "9c4ad13bd31d0bea",
+        "endpoint": "096e16d6735c1a31",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 520,
+        "y": 420,
+        "wires": [
+            [
+                "9b963ddde35b4654"
+            ]
+        ]
+    },
+    {
+        "id": "21a83d9715e3b230",
+        "type": "function",
+        "z": "9c4ad13bd31d0bea",
+        "name": "function 66",
+        "func": "flow.set(\"accel_x\",msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c6e343e548eb9888",
+        "type": "function",
+        "z": "9c4ad13bd31d0bea",
+        "name": "function 67",
+        "func": "flow.set(\"accel_y\",msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2e2e7f57cb89c61d",
+        "type": "function",
+        "z": "9c4ad13bd31d0bea",
+        "name": "function 68",
+        "func": "flow.set(\"accel_z\",msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9edace902f8441cc",
+        "type": "function",
+        "z": "9c4ad13bd31d0bea",
+        "name": "function 69",
+        "func": "flow.set(\"gyro_x\",msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "314d88c57bf83caf",
+        "type": "function",
+        "z": "9c4ad13bd31d0bea",
+        "name": "function 70",
+        "func": "flow.set(\"gyro_y\",msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9b963ddde35b4654",
+        "type": "function",
+        "z": "9c4ad13bd31d0bea",
+        "name": "function 71",
+        "func": "flow.set(\"gyro_z\",msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 420,
+        "wires": [
+            [
+                "24c758c6624e7ffe"
+            ]
+        ]
+    },
+    {
+        "id": "24c758c6624e7ffe",
+        "type": "function",
+        "z": "9c4ad13bd31d0bea",
+        "name": "function 72",
+        "func": "var isVibrating = Boolean()\nisVibrating = false\nvar accel_x = Number()\nvar accel_y = Number()\nvar accel_z = Number()\nvar gyro_x = Number()\nvar gyro_y = Number()\nvar gyro_z = Number()\naccel_x = flow.get(\"accel_x\")\naccel_y = flow.get(\"accel_y\")\naccel_z = flow.get(\"accel_z\")\ngyro_x = flow.get(\"gyro_x\")\ngyro_y = flow.get(\"gyro_y\")\ngyro_z = flow.get(\"gyro_z\")\nmsg.topic = \"INSERT INTO Exam2 values ('\" + accel_x + \"', '\" + accel_y + \"', '\" + accel_z + \"', '\" + gyro_x + \"', '\" + gyro_y + \"', '\" + gyro_z + \"', '\" + isVibrating + \"')\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 850,
+        "y": 420,
+        "wires": [
+            [
+                "07daf57d83156e84"
+            ]
+        ]
+    },
+    {
+        "id": "07daf57d83156e84",
+        "type": "sqlite",
+        "z": "9c4ad13bd31d0bea",
+        "mydb": "7acfbe3d94e262dc",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 1020,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "096e16d6735c1a31",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://172.17.0.2:4840/Team3/",
+        "secpol": "None",
+        "secmode": "None",
+        "none": true,
+        "login": false,
+        "usercert": false,
+        "usercertificate": "",
+        "userprivatekey": ""
+    },
+    {
+        "id": "7acfbe3d94e262dc",
+        "type": "sqlitedb",
+        "db": "/data/Exam2.db",
+        "mode": "RWC"
+    }
+]
