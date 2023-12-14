@@ -25,13 +25,11 @@ if __name__ == "__main__":
     myobj_angle = objects.add_object(idx, "angle")
     angle_x = myobj_angle.add_variable(idx, "angle_x", 0.1)
     angle_y = myobj_angle.add_variable(idx, "angle_y", 0.1)
-    angle_z = myobj_angle.add_variable(idx, "angle_z", 0.1)
     myobj_temp = objects.add_object(idx, "temp")
     nozzle_temp = myobj_temp.add_variable(idx, "nozzle_temp", 0.1)
     plate_temp = myobj_temp.add_variable(idx, "plate_temp", 0.1)
     angle_x.set_writable()
     angle_y.set_writable()
-    angle_z.set_writable()
     nozzle_temp.set_writable()
     plate_temp.set_writable()
 
@@ -47,7 +45,6 @@ if __name__ == "__main__":
             angle_data = mpu.get_angle_data()
             angle_x.set_value(angle_data['x'])
             angle_y.set_value(angle_data['y'])
-            angle_z.set_value(angle_data['z'])
             nozzle_temp.set_value(sensor.get_obj_temp())
             plate_temp.set_value(PlateSensor.get_object_temperature())
 
