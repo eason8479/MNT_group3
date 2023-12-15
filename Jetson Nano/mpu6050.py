@@ -248,8 +248,8 @@ class mpu6050:
         References from https://zhuanlan.zhihu.com/p/84925247
         """
         accel_data = self.get_accel_data()
-        x = ((np.arctan2(accel_data['z'], accel_data['x']) * 180 / np.pi) - 90) * -1
-        y = np.arctan2(accel_data['y'], accel_data['z']) * 180 / np.pi
+        x = np.arctan2(accel_data['y'], accel_data['z']) * 180 / np.pi
+        y = (np.arctan2(accel_data['z'], accel_data['x']) * 180 / np.pi) - 90
         z = np.arctan2(accel_data['x'], accel_data['y']) * 180 / np.pi
 
         return {'x': x, 'y': y, 'z': z}
