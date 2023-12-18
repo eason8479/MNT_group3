@@ -3,7 +3,6 @@ sys.path.insert(0, "..")
 import time
 from mpu6050 import mpu6050
 from mlx90614 import MLX90614
-from mlx90615 import MLX90615
 import Jetson.GPIO as GPIO
 
 from opcua import ua, Server
@@ -38,15 +37,15 @@ if __name__ == "__main__":
 
     try:
         mpu = mpu6050(0x68)
-        sensor = MLX90614(1, address=0x5A)
-        PlateSensor = MLX90615(2)
+        sensor = MLX90614(0, address=0x5A)
+        plateSensor = MLX90614(1, address=0x5A)
         while (True):
             time.sleep(1)
             angle_data = mpu.get_angle_data()
             angle_x.set_value(angle_data['x'])
             angle_y.set_value(angle_data['y'])
             nozzle_temp.set_value(sensor.get_obj_temp())
-            plate_temp.set_value(PlateSensor.get_object_temperature())
+            plate_temp.set_value(plateSensor.get_obj_temp())
 
     finally:
         # close connection, remove subcsriptions, etc
