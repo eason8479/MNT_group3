@@ -9,7 +9,7 @@ import Jetson.GPIO as GPIO
 
 from opcua import ua, Server
 
-def showResult(angle_data, nozzle_data, plate_data):
+def showResult():
     json_inputs = json.dumps({'input': [angle_data['x'], angle_data['y'], nozzle_data, plate_data]})
     response = requests.post(url_log, json=json_inputs)
     if response.json().index(max(response.json())) == 0:
@@ -64,7 +64,7 @@ if __name__ == "__main__":
         sensor = MLX90614(0, address=0x5A)
         plateSensor = MLX90614(1, address=0x5A)
         while (True):
-            time.sleep(1)
+            time.sleep(2)
             angle_data = mpu.get_angle_data()
             nozzle_data = sensor.get_obj_temp()
             plate_data = plateSensor.get_obj_temp()
@@ -72,7 +72,7 @@ if __name__ == "__main__":
             angle_y.set_value(angle_data['y'])
             nozzle_temp.set_value(nozzle_data)
             plate_temp.set_value(plate_data)
-            showResult(angle_data, nozzle_data, plate_data)
+            showResult()
 
     finally:
         # close connection, remove subcsriptions, etc
