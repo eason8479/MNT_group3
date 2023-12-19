@@ -1,0 +1,372 @@
+[
+    {
+        "id": "2f95f0773cf0c2ea",
+        "type": "tab",
+        "label": "Flow 4",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a1d6d872d6cc3e71",
+        "type": "inject",
+        "z": "2f95f0773cf0c2ea",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 40,
+        "wires": [
+            [
+                "58070178ac778d3b",
+                "57fac5700691da7d",
+                "0480ee589b6ab900",
+                "3c22254cdeb8fe76"
+            ]
+        ]
+    },
+    {
+        "id": "7d5f439ea72f19d5",
+        "type": "OpcUa-Client",
+        "z": "2f95f0773cf0c2ea",
+        "endpoint": "096e16d6735c1a31",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 460,
+        "y": 40,
+        "wires": [
+            [
+                "a203f7443b3e7215"
+            ]
+        ]
+    },
+    {
+        "id": "c4ec0349bd363fa5",
+        "type": "OpcUa-Client",
+        "z": "2f95f0773cf0c2ea",
+        "endpoint": "096e16d6735c1a31",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 460,
+        "y": 80,
+        "wires": [
+            [
+                "55a29cc29934380f"
+            ]
+        ]
+    },
+    {
+        "id": "2610057345322092",
+        "type": "OpcUa-Client",
+        "z": "2f95f0773cf0c2ea",
+        "endpoint": "096e16d6735c1a31",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 460,
+        "y": 120,
+        "wires": [
+            [
+                "574451f19ee08380"
+            ]
+        ]
+    },
+    {
+        "id": "af35e4e7a59a2397",
+        "type": "OpcUa-Client",
+        "z": "2f95f0773cf0c2ea",
+        "endpoint": "096e16d6735c1a31",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 460,
+        "y": 160,
+        "wires": [
+            [
+                "b16169fcfe6af51e"
+            ]
+        ]
+    },
+    {
+        "id": "58070178ac778d3b",
+        "type": "OpcUa-Item",
+        "z": "2f95f0773cf0c2ea",
+        "item": "ns=2;i=2",
+        "datatype": "Double",
+        "value": "",
+        "name": "",
+        "x": 280,
+        "y": 40,
+        "wires": [
+            [
+                "7d5f439ea72f19d5"
+            ]
+        ]
+    },
+    {
+        "id": "57fac5700691da7d",
+        "type": "OpcUa-Item",
+        "z": "2f95f0773cf0c2ea",
+        "item": "ns=2;i=3",
+        "datatype": "Double",
+        "value": "",
+        "name": "",
+        "x": 280,
+        "y": 80,
+        "wires": [
+            [
+                "c4ec0349bd363fa5"
+            ]
+        ]
+    },
+    {
+        "id": "0480ee589b6ab900",
+        "type": "OpcUa-Item",
+        "z": "2f95f0773cf0c2ea",
+        "item": "ns=2;i=5",
+        "datatype": "Double",
+        "value": "",
+        "name": "",
+        "x": 280,
+        "y": 120,
+        "wires": [
+            [
+                "2610057345322092"
+            ]
+        ]
+    },
+    {
+        "id": "3c22254cdeb8fe76",
+        "type": "OpcUa-Item",
+        "z": "2f95f0773cf0c2ea",
+        "item": "ns=2;i=6",
+        "datatype": "Double",
+        "value": "",
+        "name": "",
+        "x": 280,
+        "y": 160,
+        "wires": [
+            [
+                "af35e4e7a59a2397"
+            ]
+        ]
+    },
+    {
+        "id": "a203f7443b3e7215",
+        "type": "function",
+        "z": "2f95f0773cf0c2ea",
+        "name": "function 73",
+        "func": "flow.set(\"angle_x\",msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "55a29cc29934380f",
+        "type": "function",
+        "z": "2f95f0773cf0c2ea",
+        "name": "function 74",
+        "func": "flow.set(\"angle_y\",msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "574451f19ee08380",
+        "type": "function",
+        "z": "2f95f0773cf0c2ea",
+        "name": "function 75",
+        "func": "flow.set(\"nozzle_temp\",msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b16169fcfe6af51e",
+        "type": "function",
+        "z": "2f95f0773cf0c2ea",
+        "name": "function 76",
+        "func": "flow.set(\"plate_temp\",msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 160,
+        "wires": [
+            [
+                "6a108ecfabe6b828"
+            ]
+        ]
+    },
+    {
+        "id": "6a108ecfabe6b828",
+        "type": "function",
+        "z": "2f95f0773cf0c2ea",
+        "name": "function 77",
+        "func": "//Before starting data collection, remember to edit the\n//following parameters.\nvar obj = {}\nobj.printNo = Number(0)\nobj.x = Number(1)\nobj.y = Number(1)\nobj.model = Number(1)\nmsg.payload = obj\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 160,
+        "wires": [
+            [
+                "9de89504aaf9e64f"
+            ]
+        ]
+    },
+    {
+        "id": "9de89504aaf9e64f",
+        "type": "function",
+        "z": "2f95f0773cf0c2ea",
+        "name": "function 78",
+        "func": "msg.topic = \"INSERT INTO [3D Printer] ([Print No], [Nozzle Temperature], [Plate Temperature], [X-axis Angle], [Y-axis Angle], X, Y, Model) VALUES (\" + msg.payload[\"printNo\"] + \", \" + flow.get(\"nozzle_temp\") + \", \" + flow.get(\"plate_temp\") + \", \" + flow.get(\"angle_x\") + \", \" + flow.get(\"angle_y\") + \", \" + msg.payload[\"x\"] + \", \" + msg.payload[\"y\"] + \", \" + msg.payload[\"model\"] + \")\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 950,
+        "y": 160,
+        "wires": [
+            [
+                "8cf3ace6e005afc1"
+            ]
+        ]
+    },
+    {
+        "id": "8cf3ace6e005afc1",
+        "type": "sqlite",
+        "z": "2f95f0773cf0c2ea",
+        "mydb": "36b3531564475675",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 1150,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "096e16d6735c1a31",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://192.168.110.137:4840/Team3/",
+        "secpol": "None",
+        "secmode": "None",
+        "none": true,
+        "login": false,
+        "usercert": false,
+        "usercertificate": "",
+        "userprivatekey": ""
+    },
+    {
+        "id": "36b3531564475675",
+        "type": "sqlitedb",
+        "db": "/data/1121FinalProject.db",
+        "mode": "RWC"
+    }
+]
