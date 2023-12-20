@@ -56,7 +56,7 @@ class mpu6050:
     GYRO_CONFIG = 0x1B
     MPU_CONFIG = 0x1A
 
-    def __init__(self, address, bus=1):
+    def __init__(self, address, bus=0):
         self.address = address
         self.bus = smbus.SMBus(bus)
         # Wake up the MPU-6050 since it starts in sleep mode

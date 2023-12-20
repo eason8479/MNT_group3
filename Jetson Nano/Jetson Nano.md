@@ -8,3 +8,31 @@ This is where the Jetson Nano publishes information read from the sensors using 
 sudo pip3 install smbus2
 sudo pip3 install crcmod
 ```
+
+## Things to do before running main.py
+**每次**要開啟main.py前**都要**執行下列步驟，否則會出錯！
+
+**Every time** you start main.py you **must do** the following steps before you start it, otherwise you will get an error!
+```
+cd /sys/bus/i2c/devices/i2c-0
+sudo vi bus_clk_rate
+```
+
+接著將檔案裡頭的數字改成：
+
+Then change the number in the file to:
+```
+100000
+```
+
+:::info
+### How to use vi the text editor
+開啟vi編輯器後按下「INSERT」鍵就可編輯檔案。儲存檔案時按「ESC」後輸入「:wq」就可退回指令介面。
+
+Open vi the text editor and then press "INSERT" key to edit the file. When saving a file, press "ESC" and enter ":wq" to return to the command interface.
+:::
+
+## Sensor Wiring
+MPU6050和量測噴頭的MLX90614使用I2C Bus 0，量測底板的MLX90614使用I2C Bus 1。
+
+MPU6050 and MLX90614 for measuring nozzle use I2C Bus 0, and the MLX90614 for measuring plate uses I2C Bus 1.
