@@ -4,9 +4,9 @@
 This is where Laptop uses Node-Red to receive OPC UA data and process the data to be stored in SQL Database. One of the function nodes requires manual parameter adjustment.
 
 ## SQL Database Structure
-| Print No | Nozzle Temperature| Plate Temperature | X-axis Angle | Y-axis Angle | X | Y | Model | Successful |
-| -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
-|  |  |  |  |  |  |  |  |  |
+| Print No | Nozzle Temperature| Plate Temperature | X-axis Angle | Y-axis Angle | X | Y | Model | Time | Successful |
+| -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
+|  |  |  |  |  |  |  |  |  |  |
 
 列印時需要手動輸入以下四個參數：
 
