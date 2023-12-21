@@ -1,0 +1,599 @@
+[
+    {
+        "id": "9737729b7e70f1c9",
+        "type": "tab",
+        "label": "Flow 6",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7cc0b5988b1351c4",
+        "type": "ui_text_input",
+        "z": "9737729b7e70f1c9",
+        "name": "",
+        "label": "Nozzle Temperature",
+        "tooltip": "",
+        "group": "f261f418a117df66",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "number",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 120,
+        "y": 40,
+        "wires": [
+            [
+                "2db602e9df1fb892"
+            ]
+        ]
+    },
+    {
+        "id": "2db602e9df1fb892",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 81",
+        "func": "flow.set(\"nozzle_temp\", msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4d36f3bf12604139",
+        "type": "ui_text_input",
+        "z": "9737729b7e70f1c9",
+        "name": "",
+        "label": "Plate Temperature",
+        "tooltip": "",
+        "group": "f261f418a117df66",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "number",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 110,
+        "y": 80,
+        "wires": [
+            [
+                "261f3625661e402c"
+            ]
+        ]
+    },
+    {
+        "id": "261f3625661e402c",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 82",
+        "func": "flow.set(\"plate_temp\", msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "834f8fbe77bad9de",
+        "type": "inject",
+        "z": "9737729b7e70f1c9",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 120,
+        "wires": [
+            [
+                "752a4814e003ccc4",
+                "218e0220798ebee0"
+            ]
+        ]
+    },
+    {
+        "id": "752a4814e003ccc4",
+        "type": "OpcUa-Item",
+        "z": "9737729b7e70f1c9",
+        "item": "ns=2;i=2",
+        "datatype": "Double",
+        "value": "",
+        "name": "",
+        "x": 280,
+        "y": 120,
+        "wires": [
+            [
+                "1072d5d55150fcc9"
+            ]
+        ]
+    },
+    {
+        "id": "1072d5d55150fcc9",
+        "type": "OpcUa-Client",
+        "z": "9737729b7e70f1c9",
+        "endpoint": "096e16d6735c1a31",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 460,
+        "y": 120,
+        "wires": [
+            [
+                "7dd4ec3dc7aad6fd"
+            ]
+        ]
+    },
+    {
+        "id": "218e0220798ebee0",
+        "type": "OpcUa-Item",
+        "z": "9737729b7e70f1c9",
+        "item": "ns=2;i=3",
+        "datatype": "Double",
+        "value": "",
+        "name": "",
+        "x": 280,
+        "y": 160,
+        "wires": [
+            [
+                "5b5dbbdbb66dfbeb"
+            ]
+        ]
+    },
+    {
+        "id": "5b5dbbdbb66dfbeb",
+        "type": "OpcUa-Client",
+        "z": "9737729b7e70f1c9",
+        "endpoint": "096e16d6735c1a31",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 460,
+        "y": 160,
+        "wires": [
+            [
+                "5ae4e8f779f9c651"
+            ]
+        ]
+    },
+    {
+        "id": "5d22dcc92a2c23bb",
+        "type": "ui_text",
+        "z": "9737729b7e70f1c9",
+        "group": "f261f418a117df66",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "X Angle",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 780,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "46c908ab9030efcd",
+        "type": "ui_text",
+        "z": "9737729b7e70f1c9",
+        "group": "f261f418a117df66",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Y Angle",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 780,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "c096e8debb1f5bf8",
+        "type": "ui_text_input",
+        "z": "9737729b7e70f1c9",
+        "name": "",
+        "label": "X",
+        "tooltip": "",
+        "group": "f261f418a117df66",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "number",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 70,
+        "y": 200,
+        "wires": [
+            [
+                "d0142357c29b4ff1"
+            ]
+        ]
+    },
+    {
+        "id": "7dd4ec3dc7aad6fd",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 83",
+        "func": "flow.set(\"angle_x\", msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 120,
+        "wires": [
+            [
+                "5d22dcc92a2c23bb"
+            ]
+        ]
+    },
+    {
+        "id": "6bfdb92c518636af",
+        "type": "ui_text_input",
+        "z": "9737729b7e70f1c9",
+        "name": "",
+        "label": "Y",
+        "tooltip": "",
+        "group": "f261f418a117df66",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "number",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 70,
+        "y": 240,
+        "wires": [
+            [
+                "72749dba7e89aaa5"
+            ]
+        ]
+    },
+    {
+        "id": "5ae4e8f779f9c651",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 84",
+        "func": "flow.set(\"angle_y\", msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 160,
+        "wires": [
+            [
+                "46c908ab9030efcd"
+            ]
+        ]
+    },
+    {
+        "id": "318f86e36c9da22c",
+        "type": "ui_dropdown",
+        "z": "9737729b7e70f1c9",
+        "name": "",
+        "label": "Model Type",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "f261f418a117df66",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "Easy",
+                "value": "0",
+                "type": "str"
+            },
+            {
+                "label": "Normal",
+                "value": "1",
+                "type": "str"
+            },
+            {
+                "label": "Hard",
+                "value": "2",
+                "type": "str"
+            },
+            {
+                "label": "VERY Hard",
+                "value": "3",
+                "type": "str"
+            },
+            {
+                "label": "Insane",
+                "value": "4",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 90,
+        "y": 280,
+        "wires": [
+            [
+                "105b02decce3d83e"
+            ]
+        ]
+    },
+    {
+        "id": "d0142357c29b4ff1",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 85",
+        "func": "flow.set(\"x\", msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "112a50f2e08f216c",
+        "type": "ui_button",
+        "z": "9737729b7e70f1c9",
+        "name": "",
+        "group": "f261f418a117df66",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Predict",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 80,
+        "y": 320,
+        "wires": [
+            [
+                "c0f9b33b85db5d08"
+            ]
+        ]
+    },
+    {
+        "id": "72749dba7e89aaa5",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 86",
+        "func": "flow.set(\"y\", msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "105b02decce3d83e",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 87",
+        "func": "flow.set(\"modle\", msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "215dd8d74867ddde",
+        "type": "pythonshell in",
+        "z": "9737729b7e70f1c9",
+        "name": "",
+        "pyfile": "/data/inquiry.py",
+        "virtualenv": "",
+        "continuous": true,
+        "stdInData": true,
+        "x": 500,
+        "y": 320,
+        "wires": [
+            [
+                "e72b485e81f0c6bc"
+            ]
+        ]
+    },
+    {
+        "id": "c0f9b33b85db5d08",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 88",
+        "func": "msg.payload = flow.get(\"nozzle_temp\") + \",\" + flow.get(\"plate_temp\") + \",\" + flow.get(\"angle_x\") + \",\" + flow.get(\"angle_y\") + \",\" + flow.get(\"x\") + \",\" + flow.get(\"y\") + \",\" + flow.get(\"modle\")\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 320,
+        "wires": [
+            [
+                "215dd8d74867ddde"
+            ]
+        ]
+    },
+    {
+        "id": "e72b485e81f0c6bc",
+        "type": "ui_led",
+        "z": "9737729b7e70f1c9",
+        "order": 8,
+        "group": "04ab566205b56ab5",
+        "width": "4",
+        "height": "3",
+        "label": "Will It Work",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "1",
+                "valueType": "num"
+            },
+            {
+                "color": "#008000",
+                "value": "0",
+                "valueType": "num"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 650,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "f261f418a117df66",
+        "type": "ui_group",
+        "name": "3D Printer Setting",
+        "tab": "9fa876a1674c8f99",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "096e16d6735c1a31",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://192.168.37.237:4840/Team3/",
+        "secpol": "None",
+        "secmode": "None",
+        "none": true,
+        "login": false,
+        "usercert": false,
+        "usercertificate": "",
+        "userprivatekey": ""
+    },
+    {
+        "id": "04ab566205b56ab5",
+        "type": "ui_group",
+        "name": "Predict",
+        "tab": "9fa876a1674c8f99",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "9fa876a1674c8f99",
+        "type": "ui_tab",
+        "name": "3D Printer",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
