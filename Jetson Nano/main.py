@@ -63,6 +63,8 @@ if __name__ == "__main__":
         mpu = mpu6050(0x68)
         sensor = MLX90614(0, address=0x5A)
         plateSensor = MLX90614(1, address=0x5A)
+        sensor.linear_adjustment(215, 15)
+        plateSensor.linear_adjustment(215, 15)
         while (True):
             time.sleep(2)
             angle_data = mpu.get_angle_data()

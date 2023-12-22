@@ -45,6 +45,8 @@ class MLX90614():
     def __init__(self, bus, address=0x5A):
         self.bus = SMBus(bus)
         self.address = address
+        self.ideal_temp = 1
+        self.real_temp = 1
 
     def read_reg(self, reg_addr):
         err = None
@@ -67,10 +69,18 @@ class MLX90614():
         return temp
 
     def get_amb_temp(self):
-        return self.read_temp(self.MLX90614_TA)
+        temp = self.read_temp(self.MLX90614_TA)
+        temp = temp * (self.ideal_temp / self.real_temp)
+        return temp
 
     def get_obj_temp(self):
-        return self.read_temp(self.MLX90614_TOBJ1)
+        temp = self.read_temp(self.MLX90614_TOBJ1)
+        temp = temp * (self.ideal_temp / self.real_temp)
+        return temp
 
     def get_object_2(self):
         return self.read_temp(self.MLX90614_TOBJ2)
+
+    def linear_adjustment(self, ideal=1, real=1):
+        self.ideal_temp = ideal
+        self.real_temp = real

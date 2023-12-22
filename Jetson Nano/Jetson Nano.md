@@ -36,3 +36,10 @@ Open vi the text editor and then press "INSERT" key to edit the file. When savin
 MPU6050和量測噴頭的MLX90614使用I2C Bus 0，量測底板的MLX90614使用I2C Bus 1。
 
 MPU6050 and MLX90614 for measuring nozzle use I2C Bus 0, and the MLX90614 for measuring plate uses I2C Bus 1.
+
+## Function "linear_adjustment"
+使用此方法可以讓感測器讀值調整至正確的溫度。使用時需要輸入兩個參數，第一個是理想上應該要讀到的數值，第二個是實際上讀到的**最大值**。建議在開始讀值前使用此方法。
+
+Use this function to adjust the sensor reading to the correct temperature. There are two parameters that need to be entered, the first is the value that should ideally be read and the second is the **maximum value** that actually is read. It is recommended to use this function before starting to read values.
+
+###### 版本號：v4-dev
