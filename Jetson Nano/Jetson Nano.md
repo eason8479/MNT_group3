@@ -33,7 +33,7 @@ Open vi the text editor and then press "INSERT" key to edit the file. When savin
 :::
 
 ## Sensor Wiring
-MPU6050和量測噴頭的MLX90614使用I2C Bus 0，量測底板的MLX90614使用I2C Bus 1。
+MPU6050和量測底板的MLX90614使用I2C Bus 0，量測噴頭的MLX90614使用I2C Bus 1。
 
 MPU6050 and MLX90614 for measuring nozzle use I2C Bus 0, and the MLX90614 for measuring plate uses I2C Bus 1.
 
@@ -42,4 +42,8 @@ MPU6050 and MLX90614 for measuring nozzle use I2C Bus 0, and the MLX90614 for me
 
 Use this function to adjust the sensor reading to the correct temperature. There are two parameters that need to be entered, the first is the value that should ideally be read and the second is the **maximum value** that actually is read. It is recommended to use this function before starting to read values.
 
-###### 版本號：v4-dev
+```python
+def linear_adjustment(self, ideal=1, real=1)
+```
+
+###### 版本號：v1.0.0-beta
