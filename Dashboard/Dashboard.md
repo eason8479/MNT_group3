@@ -11,3 +11,5 @@ You need to install these palettes before you start using Node-red:
 node-red-contrib-pythonshell
 node-red-contrib-ui-led
 ```
+
+###### 版本號：v2-dev
