@@ -32,7 +32,8 @@
         "y": 40,
         "wires": [
             [
-                "50b520f7d804688e"
+                "50b520f7d804688e",
+                "c5a52df92b870efc"
             ]
         ]
     },
@@ -88,6 +89,26 @@
         "y": 40,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "c5a52df92b870efc",
+        "type": "function",
+        "z": "b8856fa3ce8d2259",
+        "name": "function 89",
+        "func": "msg.topic = \"DELETE FROM [3D Printer] WHERE [Nozzle Temperature] = 0.1 OR [Plate Temperature] = 0.1 OR [X-axis Angle] = 0.1 OR [Y-axis Angle] = 0.1\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 80,
+        "wires": [
+            [
+                "d146aed8deb28623"
+            ]
         ]
     },
     {
