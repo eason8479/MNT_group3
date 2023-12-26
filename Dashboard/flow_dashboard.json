@@ -123,9 +123,7 @@
                 "752a4814e003ccc4",
                 "218e0220798ebee0",
                 "dc3138d846f99e76",
-                "2b59c18c459e4e38",
-                "096d19d7d70f19aa",
-                "523ccb8357d0850f"
+                "2b59c18c459e4e38"
             ]
         ]
     },
@@ -222,48 +220,6 @@
         ]
     },
     {
-        "id": "5d22dcc92a2c23bb",
-        "type": "ui_text",
-        "z": "9737729b7e70f1c9",
-        "group": "f261f418a117df66",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "X Angle",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "style": false,
-        "font": "",
-        "fontSize": 16,
-        "color": "#000000",
-        "x": 780,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "46c908ab9030efcd",
-        "type": "ui_text",
-        "z": "9737729b7e70f1c9",
-        "group": "f261f418a117df66",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Y Angle",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "style": false,
-        "font": "",
-        "fontSize": 16,
-        "color": "#000000",
-        "x": 780,
-        "y": 160,
-        "wires": []
-    },
-    {
         "id": "c096e8debb1f5bf8",
         "type": "ui_text_input",
         "z": "9737729b7e70f1c9",
@@ -271,7 +227,7 @@
         "label": "X",
         "tooltip": "",
         "group": "f261f418a117df66",
-        "order": 5,
+        "order": 4,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -304,9 +260,7 @@
         "x": 630,
         "y": 120,
         "wires": [
-            [
-                "5d22dcc92a2c23bb"
-            ]
+            []
         ]
     },
     {
@@ -317,7 +271,7 @@
         "label": "Y",
         "tooltip": "",
         "group": "f261f418a117df66",
-        "order": 6,
+        "order": 5,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -350,9 +304,7 @@
         "x": 630,
         "y": 160,
         "wires": [
-            [
-                "46c908ab9030efcd"
-            ]
+            []
         ]
     },
     {
@@ -364,7 +316,7 @@
         "tooltip": "",
         "place": "Select option",
         "group": "f261f418a117df66",
-        "order": 7,
+        "order": 6,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -432,7 +384,7 @@
         "z": "9737729b7e70f1c9",
         "name": "",
         "group": "f261f418a117df66",
-        "order": 8,
+        "order": 7,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -450,7 +402,8 @@
         "y": 320,
         "wires": [
             [
-                "c0f9b33b85db5d08"
+                "c0f9b33b85db5d08",
+                "096d19d7d70f19aa"
             ]
         ]
     },
@@ -503,7 +456,7 @@
         "y": 320,
         "wires": [
             [
-                "e72b485e81f0c6bc"
+                "4886e141b7479b86"
             ]
         ]
     },
@@ -512,7 +465,7 @@
         "type": "function",
         "z": "9737729b7e70f1c9",
         "name": "function 88",
-        "func": "msg.payload = flow.get(\"nozzle_temp\") + \",\" + flow.get(\"plate_temp\") + \",\" + flow.get(\"angle_x\") + \",\" + flow.get(\"angle_y\") + \",\" + flow.get(\"x\") + \",\" + flow.get(\"y\") + \",\" + flow.get(\"modle\")\nreturn msg;",
+        "func": "msg.payload = flow.get(\"modle\") + \",\" + flow.get(\"x\") + \",\" + flow.get(\"y\") + \",\" + flow.get(\"level\") + \",\" + flow.get(\"nozzle_temp\") + \",\" + flow.get(\"plate_temp\")\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -542,12 +495,12 @@
             {
                 "color": "#ff0000",
                 "value": "1",
-                "valueType": "str"
+                "valueType": "num"
             },
             {
                 "color": "#008000",
                 "value": "0",
-                "valueType": "str"
+                "valueType": "num"
             },
             {
                 "color": "#ffff00",
@@ -559,7 +512,7 @@
         "shape": "circle",
         "showGlow": true,
         "name": "",
-        "x": 650,
+        "x": 810,
         "y": 320,
         "wires": []
     },
@@ -697,7 +650,8 @@
                 "96fcb4fdaa2b0b30",
                 "dfb301bc2431f685",
                 "96614141068a5bdf",
-                "925b4bfe597452b8"
+                "925b4bfe597452b8",
+                "4d881b84e9e702a3"
             ]
         ]
     },
@@ -1371,11 +1325,11 @@
         "topic": "topic",
         "topicType": "msg",
         "className": "",
-        "x": 640,
+        "x": 480,
         "y": 600,
         "wires": [
             [
-                "96fcb4fdaa2b0b30"
+                "3baa234b1ae103ab"
             ]
         ]
     },
@@ -1419,11 +1373,11 @@
         "topic": "topic",
         "topicType": "msg",
         "className": "",
-        "x": 640,
+        "x": 480,
         "y": 640,
         "wires": [
             [
-                "dfb301bc2431f685"
+                "4e1f3f65a1f6f36e"
             ]
         ]
     },
@@ -1467,11 +1421,11 @@
         "topic": "topic",
         "topicType": "msg",
         "className": "",
-        "x": 640,
+        "x": 480,
         "y": 680,
         "wires": [
             [
-                "96614141068a5bdf"
+                "30298f1af9cd9d58"
             ]
         ]
     },
@@ -1515,57 +1469,11 @@
         "topic": "topic",
         "topicType": "msg",
         "className": "",
-        "x": 640,
+        "x": 480,
         "y": 720,
         "wires": [
             [
-                "925b4bfe597452b8"
-            ]
-        ]
-    },
-    {
-        "id": "523ccb8357d0850f",
-        "type": "OpcUa-Item",
-        "z": "9737729b7e70f1c9",
-        "item": "ns=2;i=8",
-        "datatype": "Boolean",
-        "value": "",
-        "name": "",
-        "x": 280,
-        "y": 480,
-        "wires": [
-            [
-                "421d4005cf2f2a0c"
-            ]
-        ]
-    },
-    {
-        "id": "421d4005cf2f2a0c",
-        "type": "OpcUa-Client",
-        "z": "9737729b7e70f1c9",
-        "endpoint": "096e16d6735c1a31",
-        "action": "read",
-        "deadbandtype": "a",
-        "deadbandvalue": 1,
-        "time": 10,
-        "timeUnit": "s",
-        "certificate": "n",
-        "localfile": "",
-        "localkeyfile": "",
-        "securitymode": "None",
-        "securitypolicy": "None",
-        "folderName4PKI": "",
-        "useTransport": false,
-        "maxChunkCount": 1,
-        "maxMessageSize": 8192,
-        "receiveBufferSize": 8192,
-        "sendBufferSize": 8192,
-        "name": "",
-        "x": 460,
-        "y": 480,
-        "wires": [
-            [
-                "6c0e84e730c46691"
+                "aa0a3bfca7b87333"
             ]
         ]
     },
@@ -1596,9 +1504,235 @@
         "shape": "circle",
         "showGlow": true,
         "name": "",
-        "x": 610,
-        "y": 480,
+        "x": 1290,
+        "y": 760,
         "wires": []
+    },
+    {
+        "id": "4886e141b7479b86",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 106",
+        "func": "switch(msg.payload)\n{\n    case \"1\\n\":\n        msg.payload = 1\n        break\n    case \"0\\n\":\n        msg.payload = 0\n        break\n    case \"-1\\n\":\n        msg.payload = -1\n        break\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 320,
+        "wires": [
+            [
+                "e72b485e81f0c6bc"
+            ]
+        ]
+    },
+    {
+        "id": "f90d1ccef2dbc79a",
+        "type": "ui_switch",
+        "z": "9737729b7e70f1c9",
+        "name": "",
+        "label": "Normal Level",
+        "tooltip": "",
+        "group": "f261f418a117df66",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 470,
+        "y": 40,
+        "wires": [
+            [
+                "e57680d2054ed9be"
+            ]
+        ]
+    },
+    {
+        "id": "e57680d2054ed9be",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 107",
+        "func": "switch(msg.payload)\n{\n    case true:\n        flow.set(\"level\", 1)\n        break\n    case false:\n        flow.set(\"level\", 0)\n        break\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4d881b84e9e702a3",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 108",
+        "func": "msg.payload = flow.get(\"nozzle_temp\") + \",\" + flow.get(\"plate_temp\") + \",\" + flow.get(\"angle_x\") + \",\" + flow.get(\"angle_y\")\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 760,
+        "wires": [
+            [
+                "555d78e768a67362"
+            ]
+        ]
+    },
+    {
+        "id": "555d78e768a67362",
+        "type": "pythonshell in",
+        "z": "9737729b7e70f1c9",
+        "name": "",
+        "pyfile": "/data/inpuiry2.py",
+        "virtualenv": "",
+        "continuous": true,
+        "stdInData": true,
+        "x": 980,
+        "y": 760,
+        "wires": [
+            [
+                "0683d2b1d8b22c79"
+            ]
+        ]
+    },
+    {
+        "id": "0683d2b1d8b22c79",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 109",
+        "func": "switch(msg.payload)\n{\n    case \"True\\n\":\n        msg.payload = true\n        break\n    case \"False\\n\":\n        msg.payload = false\n        break\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1150,
+        "y": 760,
+        "wires": [
+            [
+                "6c0e84e730c46691",
+                "9024bcffb339d26d"
+            ]
+        ]
+    },
+    {
+        "id": "9024bcffb339d26d",
+        "type": "debug",
+        "z": "9737729b7e70f1c9",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1320,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "3baa234b1ae103ab",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 110",
+        "func": "flow.set(\"angle_x_period\", msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 600,
+        "wires": [
+            [
+                "96fcb4fdaa2b0b30"
+            ]
+        ]
+    },
+    {
+        "id": "4e1f3f65a1f6f36e",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 111",
+        "func": "flow.set(\"angle_y_period\", msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 640,
+        "wires": [
+            [
+                "dfb301bc2431f685"
+            ]
+        ]
+    },
+    {
+        "id": "30298f1af9cd9d58",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 112",
+        "func": "flow.set(\"nozzle_temp_period\", msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 680,
+        "wires": [
+            [
+                "96614141068a5bdf"
+            ]
+        ]
+    },
+    {
+        "id": "aa0a3bfca7b87333",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 113",
+        "func": "flow.set(\"plate_temp_period\", msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 720,
+        "wires": [
+            [
+                "925b4bfe597452b8"
+            ]
+        ]
     },
     {
         "id": "22c1e9ef02bdceee",
@@ -1624,7 +1758,7 @@
     {
         "id": "096e16d6735c1a31",
         "type": "OpcUa-Endpoint",
-        "endpoint": "opc.tcp://192.168.37.237:4840/Team3/",
+        "endpoint": "opc.tcp://192.168.50.179:4840/Team3/",
         "secpol": "None",
         "secmode": "None",
         "none": true,
