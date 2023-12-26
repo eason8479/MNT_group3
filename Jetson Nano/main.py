@@ -3,22 +3,10 @@ sys.path.insert(0, "..")
 import time
 from mpu6050 import mpu6050
 from mlx90614 import MLX90614
-import json
-import requests
-import Jetson.GPIO as GPIO
 
 from opcua import ua, Server
 
 if __name__ == "__main__":
-
-    url_log = 'http://192.168.50.168:25926/inference_2'
-
-    # set mode (BOARD/BCM)
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setwarnings(False)
-    # sensor out
-    output_pin = 18
-    GPIO.setup(output_pin, GPIO.OUT)
 
     # setup our server
     server = Server()
@@ -38,13 +26,10 @@ if __name__ == "__main__":
     myobj_temp = objects.add_object(idx, "temp")
     nozzle_temp = myobj_temp.add_variable(idx, "nozzle_temp", 0.1)
     plate_temp = myobj_temp.add_variable(idx, "plate_temp", 0.1)
-    myobj_predict = objects.add_object(idx, "predict")
-    predict_data = myobj_predict.add_variable(idx, "isSuccessfully", True)
     angle_x.set_writable()
     angle_y.set_writable()
     nozzle_temp.set_writable()
     plate_temp.set_writable()
-    predict_data.set_writable()
 
     # starting!
     server.start()
@@ -58,12 +43,10 @@ if __name__ == "__main__":
         while (True):
             time.sleep(2)
             angle_data = mpu.get_angle_data()
-            nozzle_data = sensor.get_obj_temp()
-            plate_data = plateSensor.get_obj_temp()
             angle_x.set_value(angle_data['x'])
             angle_y.set_value(angle_data['y'])
-            nozzle_temp.set_value(nozzle_data)
-            plate_temp.set_value(plate_data)
+            nozzle_temp.set_value(sensor.get_obj_temp())
+            plate_temp.set_value(plateSensor.get_obj_temp())
 
     finally:
         # close connection, remove subcsriptions, etc

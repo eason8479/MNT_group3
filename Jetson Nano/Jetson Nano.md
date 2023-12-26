@@ -46,4 +46,4 @@ Use this function to adjust the sensor reading to the correct temperature. There
 def linear_adjustment(self, ideal=1, real=1)
 ```
 
-###### 版本號：v1.0.0-beta
+###### 版本號：v1.0.0
