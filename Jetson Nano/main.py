@@ -9,16 +9,6 @@ import Jetson.GPIO as GPIO
 
 from opcua import ua, Server
 
-def showResult():
-    json_inputs = json.dumps({'input': [float(nozzle_data), float(plate_data), float(angle_data['x']), float(angle_data['y'])]})
-    response = requests.post(url_log, json=json_inputs)
-    if response.json().index(max(response.json())) == 0:
-        GPIO.output(output_pin, GPIO.LOW)
-        predict_data.set_value(True)
-    else:
-        GPIO.output(output_pin, GPIO.HIGH)
-        predict_data.set_value(False)
-
 if __name__ == "__main__":
 
     url_log = 'http://192.168.50.168:25926/inference_2'
@@ -74,7 +64,6 @@ if __name__ == "__main__":
             angle_y.set_value(angle_data['y'])
             nozzle_temp.set_value(nozzle_data)
             plate_temp.set_value(plate_data)
-            showResult()
 
     finally:
         # close connection, remove subcsriptions, etc
