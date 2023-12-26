@@ -21,7 +21,7 @@ def showResult():
 
 if __name__ == "__main__":
 
-    url_log = 'http://192.168.50.168:25926/inference'
+    url_log = 'http://192.168.50.168:25926/inference_2'
 
     # set mode (BOARD/BCM)
     GPIO.setmode(GPIO.BCM)
