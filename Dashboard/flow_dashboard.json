@@ -1,0 +1,1800 @@
+[
+    {
+        "id": "9737729b7e70f1c9",
+        "type": "tab",
+        "label": "Flow 6",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7cc0b5988b1351c4",
+        "type": "ui_text_input",
+        "z": "9737729b7e70f1c9",
+        "name": "",
+        "label": "Nozzle Temperature",
+        "tooltip": "",
+        "group": "f261f418a117df66",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "number",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 120,
+        "y": 40,
+        "wires": [
+            [
+                "2db602e9df1fb892"
+            ]
+        ]
+    },
+    {
+        "id": "2db602e9df1fb892",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 81",
+        "func": "flow.set(\"nozzle_temp\", msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4d36f3bf12604139",
+        "type": "ui_text_input",
+        "z": "9737729b7e70f1c9",
+        "name": "",
+        "label": "Plate Temperature",
+        "tooltip": "",
+        "group": "f261f418a117df66",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "number",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 110,
+        "y": 80,
+        "wires": [
+            [
+                "261f3625661e402c"
+            ]
+        ]
+    },
+    {
+        "id": "261f3625661e402c",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 82",
+        "func": "flow.set(\"plate_temp\", msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "834f8fbe77bad9de",
+        "type": "inject",
+        "z": "9737729b7e70f1c9",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 120,
+        "wires": [
+            [
+                "752a4814e003ccc4",
+                "218e0220798ebee0",
+                "dc3138d846f99e76",
+                "2b59c18c459e4e38"
+            ]
+        ]
+    },
+    {
+        "id": "752a4814e003ccc4",
+        "type": "OpcUa-Item",
+        "z": "9737729b7e70f1c9",
+        "item": "ns=2;i=2",
+        "datatype": "Double",
+        "value": "",
+        "name": "",
+        "x": 280,
+        "y": 120,
+        "wires": [
+            [
+                "1072d5d55150fcc9"
+            ]
+        ]
+    },
+    {
+        "id": "1072d5d55150fcc9",
+        "type": "OpcUa-Client",
+        "z": "9737729b7e70f1c9",
+        "endpoint": "096e16d6735c1a31",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 460,
+        "y": 120,
+        "wires": [
+            [
+                "7dd4ec3dc7aad6fd"
+            ]
+        ]
+    },
+    {
+        "id": "218e0220798ebee0",
+        "type": "OpcUa-Item",
+        "z": "9737729b7e70f1c9",
+        "item": "ns=2;i=3",
+        "datatype": "Double",
+        "value": "",
+        "name": "",
+        "x": 280,
+        "y": 160,
+        "wires": [
+            [
+                "5b5dbbdbb66dfbeb"
+            ]
+        ]
+    },
+    {
+        "id": "5b5dbbdbb66dfbeb",
+        "type": "OpcUa-Client",
+        "z": "9737729b7e70f1c9",
+        "endpoint": "096e16d6735c1a31",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 460,
+        "y": 160,
+        "wires": [
+            [
+                "5ae4e8f779f9c651"
+            ]
+        ]
+    },
+    {
+        "id": "c096e8debb1f5bf8",
+        "type": "ui_text_input",
+        "z": "9737729b7e70f1c9",
+        "name": "",
+        "label": "X",
+        "tooltip": "",
+        "group": "f261f418a117df66",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "number",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 70,
+        "y": 200,
+        "wires": [
+            [
+                "d0142357c29b4ff1"
+            ]
+        ]
+    },
+    {
+        "id": "7dd4ec3dc7aad6fd",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 83",
+        "func": "flow.set(\"angle_x\", msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6bfdb92c518636af",
+        "type": "ui_text_input",
+        "z": "9737729b7e70f1c9",
+        "name": "",
+        "label": "Y",
+        "tooltip": "",
+        "group": "f261f418a117df66",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "number",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 70,
+        "y": 240,
+        "wires": [
+            [
+                "72749dba7e89aaa5"
+            ]
+        ]
+    },
+    {
+        "id": "5ae4e8f779f9c651",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 84",
+        "func": "flow.set(\"angle_y\", msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "318f86e36c9da22c",
+        "type": "ui_dropdown",
+        "z": "9737729b7e70f1c9",
+        "name": "",
+        "label": "Model Type",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "f261f418a117df66",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "Easy",
+                "value": "0",
+                "type": "str"
+            },
+            {
+                "label": "Normal",
+                "value": "1",
+                "type": "str"
+            },
+            {
+                "label": "Hard",
+                "value": "2",
+                "type": "str"
+            },
+            {
+                "label": "VERY Hard",
+                "value": "3",
+                "type": "str"
+            },
+            {
+                "label": "Insane",
+                "value": "4",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 90,
+        "y": 280,
+        "wires": [
+            [
+                "105b02decce3d83e"
+            ]
+        ]
+    },
+    {
+        "id": "d0142357c29b4ff1",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 85",
+        "func": "flow.set(\"x\", msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "112a50f2e08f216c",
+        "type": "ui_button",
+        "z": "9737729b7e70f1c9",
+        "name": "",
+        "group": "f261f418a117df66",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Predict",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 80,
+        "y": 320,
+        "wires": [
+            [
+                "c0f9b33b85db5d08",
+                "096d19d7d70f19aa"
+            ]
+        ]
+    },
+    {
+        "id": "72749dba7e89aaa5",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 86",
+        "func": "flow.set(\"y\", msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "105b02decce3d83e",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 87",
+        "func": "flow.set(\"modle\", msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "215dd8d74867ddde",
+        "type": "pythonshell in",
+        "z": "9737729b7e70f1c9",
+        "name": "",
+        "pyfile": "/data/inquiry.py",
+        "virtualenv": "",
+        "continuous": true,
+        "stdInData": true,
+        "x": 500,
+        "y": 320,
+        "wires": [
+            [
+                "4886e141b7479b86"
+            ]
+        ]
+    },
+    {
+        "id": "c0f9b33b85db5d08",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 88",
+        "func": "msg.payload = flow.get(\"modle\") + \",\" + flow.get(\"x\") + \",\" + flow.get(\"y\") + \",\" + flow.get(\"level\") + \",\" + flow.get(\"nozzle_temp\") + \",\" + flow.get(\"plate_temp\")\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 320,
+        "wires": [
+            [
+                "215dd8d74867ddde"
+            ]
+        ]
+    },
+    {
+        "id": "e72b485e81f0c6bc",
+        "type": "ui_led",
+        "z": "9737729b7e70f1c9",
+        "order": 8,
+        "group": "04ab566205b56ab5",
+        "width": "4",
+        "height": "3",
+        "label": "Will It Work",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "1",
+                "valueType": "num"
+            },
+            {
+                "color": "#008000",
+                "value": "0",
+                "valueType": "num"
+            },
+            {
+                "color": "#ffff00",
+                "value": "-1",
+                "valueType": "num"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 810,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "95866589ef698960",
+        "type": "OpcUa-Client",
+        "z": "9737729b7e70f1c9",
+        "endpoint": "096e16d6735c1a31",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 460,
+        "y": 360,
+        "wires": [
+            [
+                "de1746bf7d11c808"
+            ]
+        ]
+    },
+    {
+        "id": "d65970e3b83716c5",
+        "type": "OpcUa-Client",
+        "z": "9737729b7e70f1c9",
+        "endpoint": "096e16d6735c1a31",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 460,
+        "y": 400,
+        "wires": [
+            [
+                "3e0fe0167ff8ae88"
+            ]
+        ]
+    },
+    {
+        "id": "dc3138d846f99e76",
+        "type": "OpcUa-Item",
+        "z": "9737729b7e70f1c9",
+        "item": "ns=2;i=5",
+        "datatype": "Double",
+        "value": "",
+        "name": "",
+        "x": 280,
+        "y": 360,
+        "wires": [
+            [
+                "95866589ef698960"
+            ]
+        ]
+    },
+    {
+        "id": "2b59c18c459e4e38",
+        "type": "OpcUa-Item",
+        "z": "9737729b7e70f1c9",
+        "item": "ns=2;i=6",
+        "datatype": "Double",
+        "value": "",
+        "name": "",
+        "x": 280,
+        "y": 400,
+        "wires": [
+            [
+                "d65970e3b83716c5"
+            ]
+        ]
+    },
+    {
+        "id": "de1746bf7d11c808",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 90",
+        "func": "flow.set(\"nozzle_temp\",msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3e0fe0167ff8ae88",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 91",
+        "func": "flow.set(\"plate_temp\",msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 400,
+        "wires": [
+            [
+                "b054936c6664c4e5",
+                "d7218d06d946cb17",
+                "090d21f98742b6c1",
+                "2960a43c315570a0",
+                "2084235f3ba1bd0c",
+                "96fcb4fdaa2b0b30",
+                "dfb301bc2431f685",
+                "96614141068a5bdf",
+                "925b4bfe597452b8",
+                "4d881b84e9e702a3"
+            ]
+        ]
+    },
+    {
+        "id": "b054936c6664c4e5",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 92",
+        "func": "msg.payload = flow.get(\"angle_x\")\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 400,
+        "wires": [
+            [
+                "5dc074c9acf83716"
+            ]
+        ]
+    },
+    {
+        "id": "5dc074c9acf83716",
+        "type": "ui_text",
+        "z": "9737729b7e70f1c9",
+        "group": "766a2f2a81dfbf79",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "X Angle",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 940,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "d7218d06d946cb17",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 93",
+        "func": "msg.payload = flow.get(\"angle_y\")\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 440,
+        "wires": [
+            [
+                "e3febcec302ee57e"
+            ]
+        ]
+    },
+    {
+        "id": "e3febcec302ee57e",
+        "type": "ui_text",
+        "z": "9737729b7e70f1c9",
+        "group": "766a2f2a81dfbf79",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Y Angle",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 940,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "090d21f98742b6c1",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 94",
+        "func": "msg.payload = flow.get(\"nozzle_temp\")\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 480,
+        "wires": [
+            [
+                "1f579649babfed43"
+            ]
+        ]
+    },
+    {
+        "id": "2960a43c315570a0",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 95",
+        "func": "msg.payload = flow.get(\"plate_temp\")\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 520,
+        "wires": [
+            [
+                "5d595da6e79fe64f"
+            ]
+        ]
+    },
+    {
+        "id": "2084235f3ba1bd0c",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 96",
+        "func": "msg.topic = \"INSERT INTO [3D Printer] ([Print No], [Nozzle Temperature], [Plate Temperature], [X-axis Angle], [Y-axis Angle], Time) VALUES (-1, \" + flow.get(\"nozzle_temp\") + \", \" + flow.get(\"plate_temp\") + \", \" + flow.get(\"angle_x\") + \", \" + flow.get(\"angle_y\") + \", \" + Date.now() + \")\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 560,
+        "wires": [
+            [
+                "e5274ba9c4494def"
+            ]
+        ]
+    },
+    {
+        "id": "e5274ba9c4494def",
+        "type": "sqlite",
+        "z": "9737729b7e70f1c9",
+        "mydb": "36b3531564475675",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 990,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "096d19d7d70f19aa",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 97",
+        "func": "flow.set(\"angle_x_period\", 3)\nflow.set(\"angle_y_period\", 3)\nflow.set(\"nozzle_temp_period\", 3)\nflow.set(\"plate_temp_period\", 3)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "96fcb4fdaa2b0b30",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 98",
+        "func": "var objNow = Date.now()\nvar obj = Number()\nswitch(flow.get(\"angle_x_period\"))\n{\n    case 3: \n        obj = objNow - 3 * 60 * 1000\n        break\n    case 15: \n        obj = objNow - 15 * 60 * 1000\n        break\n    case 30: \n        obj = objNow - 30 * 60 * 1000\n        break\n    case 60: \n        obj = objNow - 60 * 60 * 1000\n        break\n    default:\n        break\n}\nmsg.topic = \"SELECT [X-axis Angle], Time FROM [3D Printer] WHERE Time BETWEEN \" + obj + \" AND \" + objNow\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 600,
+        "wires": [
+            [
+                "61dc648a36f230e9"
+            ]
+        ]
+    },
+    {
+        "id": "61dc648a36f230e9",
+        "type": "sqlite",
+        "z": "9737729b7e70f1c9",
+        "mydb": "36b3531564475675",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 990,
+        "y": 600,
+        "wires": [
+            [
+                "d26f910c94a67c0a"
+            ]
+        ]
+    },
+    {
+        "id": "d26f910c94a67c0a",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 99",
+        "func": "var objData = []\nif(msg.payload.length == 0)\n{\n    objData = [{\"x\": Date.now(), \"y\": null}]\n}\nelse\n{\n    for(var i = 0; i < msg.payload.length; i++)\n    {\n        var objProperty = {\"x\": msg.payload[i][\"Time\"], \"y\": msg.payload[i][\"X-axis Angle\"]}\n        objData.splice(i, 0, objProperty)\n    }\n}\nvar obj = [{\n    \"series\": [\"X Angle\"],\n    \"data\": [objData],\n    \"labels\": [\"\"]\n}]\nmsg.payload = obj\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1190,
+        "y": 600,
+        "wires": [
+            [
+                "650b305616cf1740"
+            ]
+        ]
+    },
+    {
+        "id": "650b305616cf1740",
+        "type": "ui_chart",
+        "z": "9737729b7e70f1c9",
+        "name": "",
+        "group": "766a2f2a81dfbf79",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "label": "X Angle",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "auto",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1340,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dfb301bc2431f685",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 100",
+        "func": "var objNow = Date.now()\nvar obj = Number()\nswitch(flow.get(\"angle_y_period\"))\n{\n    case 3: \n        obj = objNow - 3 * 60 * 1000\n        break\n    case 15: \n        obj = objNow - 15 * 60 * 1000\n        break\n    case 30: \n        obj = objNow - 30 * 60 * 1000\n        break\n    case 60: \n        obj = objNow - 60 * 60 * 1000\n        break\n    default:\n        break\n}\nmsg.topic = \"SELECT [Y-axis Angle], Time FROM [3D Printer] WHERE Time BETWEEN \" + obj + \" AND \" + objNow\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 640,
+        "wires": [
+            [
+                "854bf876c6c1263a"
+            ]
+        ]
+    },
+    {
+        "id": "854bf876c6c1263a",
+        "type": "sqlite",
+        "z": "9737729b7e70f1c9",
+        "mydb": "36b3531564475675",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 990,
+        "y": 640,
+        "wires": [
+            [
+                "a8efb31a44c4f838"
+            ]
+        ]
+    },
+    {
+        "id": "a8efb31a44c4f838",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 101",
+        "func": "var objData = []\nif(msg.payload.length == 0)\n{\n    objData = [{\"x\": Date.now(), \"y\": null}]\n}\nelse\n{\n    for(var i = 0; i < msg.payload.length; i++)\n    {\n        var objProperty = {\"x\": msg.payload[i][\"Time\"], \"y\": msg.payload[i][\"Y-axis Angle\"]}\n        objData.splice(i, 0, objProperty)\n    }\n}\nvar obj = [{\n    \"series\": [\"Y Angle\"],\n    \"data\": [objData],\n    \"labels\": [\"\"]\n}]\nmsg.payload = obj\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1190,
+        "y": 640,
+        "wires": [
+            [
+                "cd19c55d7a254b15"
+            ]
+        ]
+    },
+    {
+        "id": "cd19c55d7a254b15",
+        "type": "ui_chart",
+        "z": "9737729b7e70f1c9",
+        "name": "",
+        "group": "766a2f2a81dfbf79",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "label": "Y Angle",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "auto",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1340,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "96614141068a5bdf",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 102",
+        "func": "var objNow = Date.now()\nvar obj = Number()\nswitch(flow.get(\"nozzle_temp_period\"))\n{\n    case 3: \n        obj = objNow - 3 * 60 * 1000\n        break\n    case 15: \n        obj = objNow - 15 * 60 * 1000\n        break\n    case 30: \n        obj = objNow - 30 * 60 * 1000\n        break\n    case 60: \n        obj = objNow - 60 * 60 * 1000\n        break\n    default:\n        break\n}\nmsg.topic = \"SELECT [Nozzle Temperature], Time FROM [3D Printer] WHERE Time BETWEEN \" + obj + \" AND \" + objNow\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 680,
+        "wires": [
+            [
+                "1cf6a095c0b244e4"
+            ]
+        ]
+    },
+    {
+        "id": "1cf6a095c0b244e4",
+        "type": "sqlite",
+        "z": "9737729b7e70f1c9",
+        "mydb": "36b3531564475675",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 990,
+        "y": 680,
+        "wires": [
+            [
+                "078677069f174fb2"
+            ]
+        ]
+    },
+    {
+        "id": "078677069f174fb2",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 103",
+        "func": "var objData = []\nif(msg.payload.length == 0)\n{\n    objData = [{\"x\": Date.now(), \"y\": null}]\n}\nelse\n{\n    for(var i = 0; i < msg.payload.length; i++)\n    {\n        var objProperty = {\"x\": msg.payload[i][\"Time\"], \"y\": msg.payload[i][\"Nozzle Temperature\"]}\n        objData.splice(i, 0, objProperty)\n    }\n}\nvar obj = [{\n    \"series\": [\"Nozzle Temperature\"],\n    \"data\": [objData],\n    \"labels\": [\"\"]\n}]\nmsg.payload = obj\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1190,
+        "y": 680,
+        "wires": [
+            [
+                "d08d3ae72b5de946"
+            ]
+        ]
+    },
+    {
+        "id": "d08d3ae72b5de946",
+        "type": "ui_chart",
+        "z": "9737729b7e70f1c9",
+        "name": "",
+        "group": "766a2f2a81dfbf79",
+        "order": 11,
+        "width": 0,
+        "height": 0,
+        "label": "Nozzle Temperature",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "auto",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1380,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "925b4bfe597452b8",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 104",
+        "func": "var objNow = Date.now()\nvar obj = Number()\nswitch (flow.get(\"plate_temp_period\"))\n{\n    case 3: \n        obj = objNow - 3 * 60 * 1000\n        break\n    case 15: \n        obj = objNow - 15 * 60 * 1000\n        break\n    case 30: \n        obj = objNow - 30 * 60 * 1000\n        break\n    case 60: \n        obj = objNow - 60 * 60 * 1000\n        break\n    default:\n        break\n}\nmsg.topic = \"SELECT [Plate Temperature], Time FROM [3D Printer] WHERE Time BETWEEN \" + obj + \" AND \" + objNow\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 720,
+        "wires": [
+            [
+                "cab399cb0cdc2c3c"
+            ]
+        ]
+    },
+    {
+        "id": "cab399cb0cdc2c3c",
+        "type": "sqlite",
+        "z": "9737729b7e70f1c9",
+        "mydb": "36b3531564475675",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 990,
+        "y": 720,
+        "wires": [
+            [
+                "cfeaef0b7c9c89e5"
+            ]
+        ]
+    },
+    {
+        "id": "cfeaef0b7c9c89e5",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 105",
+        "func": "var objData = []\nif(msg.payload.length == 0)\n{\n    objData = [{\"x\": Date.now(), \"y\": null}]\n}\nelse\n{\n    for(var i = 0; i < msg.payload.length; i++)\n    {\n        var objProperty = {\"x\": msg.payload[i][\"Time\"], \"y\": msg.payload[i][\"Plate Temperature\"]}\n        objData.splice(i, 0, objProperty)\n    }\n}\nvar obj = [{\n    \"series\": [\"Plate Temperature\"],\n    \"data\": [objData],\n    \"labels\": [\"\"]\n}]\nmsg.payload = obj\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1190,
+        "y": 720,
+        "wires": [
+            [
+                "8b22c1999e3360b8"
+            ]
+        ]
+    },
+    {
+        "id": "8b22c1999e3360b8",
+        "type": "ui_chart",
+        "z": "9737729b7e70f1c9",
+        "name": "",
+        "group": "766a2f2a81dfbf79",
+        "order": 13,
+        "width": 0,
+        "height": 0,
+        "label": "Plate Temperature",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "auto",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1370,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1f579649babfed43",
+        "type": "ui_gauge",
+        "z": "9737729b7e70f1c9",
+        "name": "",
+        "group": "766a2f2a81dfbf79",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Nozzle Temperature",
+        "label": "°C",
+        "format": "{{msg.payload}}",
+        "min": 0,
+        "max": "230",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 980,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "5d595da6e79fe64f",
+        "type": "ui_gauge",
+        "z": "9737729b7e70f1c9",
+        "name": "",
+        "group": "766a2f2a81dfbf79",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Plate Temperature",
+        "label": "°C",
+        "format": "{{msg.payload}}",
+        "min": 0,
+        "max": "85",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 970,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "b5c376534002bfa5",
+        "type": "ui_dropdown",
+        "z": "9737729b7e70f1c9",
+        "name": "",
+        "label": "",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "766a2f2a81dfbf79",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "In 3 min",
+                "value": 3,
+                "type": "num"
+            },
+            {
+                "label": "In 15 min",
+                "value": 15,
+                "type": "num"
+            },
+            {
+                "label": "In 30 min",
+                "value": 30,
+                "type": "num"
+            },
+            {
+                "label": "In 1 hour",
+                "value": 60,
+                "type": "num"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 480,
+        "y": 600,
+        "wires": [
+            [
+                "3baa234b1ae103ab"
+            ]
+        ]
+    },
+    {
+        "id": "9b9982470445f8d1",
+        "type": "ui_dropdown",
+        "z": "9737729b7e70f1c9",
+        "name": "",
+        "label": "",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "766a2f2a81dfbf79",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "In 3 min",
+                "value": 3,
+                "type": "num"
+            },
+            {
+                "label": "In 15 min",
+                "value": 15,
+                "type": "num"
+            },
+            {
+                "label": "In 30 min",
+                "value": 30,
+                "type": "num"
+            },
+            {
+                "label": "In 1 hour",
+                "value": 60,
+                "type": "num"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 480,
+        "y": 640,
+        "wires": [
+            [
+                "4e1f3f65a1f6f36e"
+            ]
+        ]
+    },
+    {
+        "id": "35492f3a7ed602c6",
+        "type": "ui_dropdown",
+        "z": "9737729b7e70f1c9",
+        "name": "",
+        "label": "",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "766a2f2a81dfbf79",
+        "order": 10,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "In 3 min",
+                "value": 3,
+                "type": "num"
+            },
+            {
+                "label": "In 15 min",
+                "value": 15,
+                "type": "num"
+            },
+            {
+                "label": "In 30 min",
+                "value": 30,
+                "type": "num"
+            },
+            {
+                "label": "In 1 hour",
+                "value": 60,
+                "type": "num"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 480,
+        "y": 680,
+        "wires": [
+            [
+                "30298f1af9cd9d58"
+            ]
+        ]
+    },
+    {
+        "id": "fc7c50f86bddc20e",
+        "type": "ui_dropdown",
+        "z": "9737729b7e70f1c9",
+        "name": "",
+        "label": "",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "766a2f2a81dfbf79",
+        "order": 12,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "In 3 min",
+                "value": 3,
+                "type": "num"
+            },
+            {
+                "label": "In 15 min",
+                "value": 15,
+                "type": "num"
+            },
+            {
+                "label": "In 30 min",
+                "value": 30,
+                "type": "num"
+            },
+            {
+                "label": "In 1 hour",
+                "value": 60,
+                "type": "num"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 480,
+        "y": 720,
+        "wires": [
+            [
+                "aa0a3bfca7b87333"
+            ]
+        ]
+    },
+    {
+        "id": "6c0e84e730c46691",
+        "type": "ui_led",
+        "z": "9737729b7e70f1c9",
+        "order": 0,
+        "group": "4e4eb94dd11b6b43",
+        "width": "4",
+        "height": "3",
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 1290,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "4886e141b7479b86",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 106",
+        "func": "switch(msg.payload)\n{\n    case \"1\\n\":\n        msg.payload = 1\n        break\n    case \"0\\n\":\n        msg.payload = 0\n        break\n    case \"-1\\n\":\n        msg.payload = -1\n        break\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 320,
+        "wires": [
+            [
+                "e72b485e81f0c6bc"
+            ]
+        ]
+    },
+    {
+        "id": "f90d1ccef2dbc79a",
+        "type": "ui_switch",
+        "z": "9737729b7e70f1c9",
+        "name": "",
+        "label": "Normal Level",
+        "tooltip": "",
+        "group": "f261f418a117df66",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 470,
+        "y": 40,
+        "wires": [
+            [
+                "e57680d2054ed9be"
+            ]
+        ]
+    },
+    {
+        "id": "e57680d2054ed9be",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 107",
+        "func": "switch(msg.payload)\n{\n    case true:\n        flow.set(\"level\", 1)\n        break\n    case false:\n        flow.set(\"level\", 0)\n        break\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4d881b84e9e702a3",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 108",
+        "func": "msg.payload = flow.get(\"nozzle_temp\") + \",\" + flow.get(\"plate_temp\") + \",\" + flow.get(\"angle_x\") + \",\" + flow.get(\"angle_y\")\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 760,
+        "wires": [
+            [
+                "555d78e768a67362"
+            ]
+        ]
+    },
+    {
+        "id": "555d78e768a67362",
+        "type": "pythonshell in",
+        "z": "9737729b7e70f1c9",
+        "name": "",
+        "pyfile": "/data/inpuiry2.py",
+        "virtualenv": "",
+        "continuous": true,
+        "stdInData": true,
+        "x": 980,
+        "y": 760,
+        "wires": [
+            [
+                "0683d2b1d8b22c79"
+            ]
+        ]
+    },
+    {
+        "id": "0683d2b1d8b22c79",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 109",
+        "func": "switch(msg.payload)\n{\n    case \"True\\n\":\n        msg.payload = true\n        break\n    case \"False\\n\":\n        msg.payload = false\n        break\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1150,
+        "y": 760,
+        "wires": [
+            [
+                "6c0e84e730c46691"
+            ]
+        ]
+    },
+    {
+        "id": "3baa234b1ae103ab",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 110",
+        "func": "flow.set(\"angle_x_period\", msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 600,
+        "wires": [
+            [
+                "96fcb4fdaa2b0b30"
+            ]
+        ]
+    },
+    {
+        "id": "4e1f3f65a1f6f36e",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 111",
+        "func": "flow.set(\"angle_y_period\", msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 640,
+        "wires": [
+            [
+                "dfb301bc2431f685"
+            ]
+        ]
+    },
+    {
+        "id": "30298f1af9cd9d58",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 112",
+        "func": "flow.set(\"nozzle_temp_period\", msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 680,
+        "wires": [
+            [
+                "96614141068a5bdf"
+            ]
+        ]
+    },
+    {
+        "id": "aa0a3bfca7b87333",
+        "type": "function",
+        "z": "9737729b7e70f1c9",
+        "name": "function 113",
+        "func": "flow.set(\"plate_temp_period\", msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 720,
+        "wires": [
+            [
+                "925b4bfe597452b8"
+            ]
+        ]
+    },
+    {
+        "id": "22c1e9ef02bdceee",
+        "type": "ui_spacer",
+        "z": "9737729b7e70f1c9",
+        "name": "spacer",
+        "group": "766a2f2a81dfbf79",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "f261f418a117df66",
+        "type": "ui_group",
+        "name": "3D Printer Setting",
+        "tab": "9fa876a1674c8f99",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "096e16d6735c1a31",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://192.168.50.179:4840/Team3/",
+        "secpol": "None",
+        "secmode": "None",
+        "none": true,
+        "login": false,
+        "usercert": false,
+        "usercertificate": "",
+        "userprivatekey": ""
+    },
+    {
+        "id": "04ab566205b56ab5",
+        "type": "ui_group",
+        "name": "Predict",
+        "tab": "9fa876a1674c8f99",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "766a2f2a81dfbf79",
+        "type": "ui_group",
+        "name": "Information",
+        "tab": "9fa876a1674c8f99",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "36b3531564475675",
+        "type": "sqlitedb",
+        "db": "/data/1121FinalProject.db",
+        "mode": "RWC"
+    },
+    {
+        "id": "4e4eb94dd11b6b43",
+        "type": "ui_group",
+        "name": "Status",
+        "tab": "9fa876a1674c8f99",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "9fa876a1674c8f99",
+        "type": "ui_tab",
+        "name": "3D Printer",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
