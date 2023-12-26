@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *.csv
 .idea/.gitignore
 .idea/misc.xml
@@ -5,3 +6,18 @@
 .idea/modules.xml
 .idea/vcs.xml
 .idea/inspectionProfiles/profiles_settings.xml
+=======
+exam2/data.csv
+exam2/my_inputs.csv
+exam2/my_labels.csv
+exam2/my_test_inputs.csv
+exam2/my_test_labels.csv
+Model_1/x_test_1.csv
+Model_1/x_train_1.csv
+Model_1/y_test_1.csv
+Model_1/y_train_1.csv
+Model_2/x_test_2.csv
+Model_2/x_train_2.csv
+Model_2/y_test_2.csv
+Model_2/y_train_2.csv
+>>>>>>> add-cloud-computing-code
