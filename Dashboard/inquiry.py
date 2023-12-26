@@ -4,7 +4,7 @@ import requests
 
 msg = sys.stdin.readline()
 msg_array = msg.split(',')
-url_log = 'http://192.168.50.168:25926/inference'
+url_log = 'http://192.168.50.168:25926/inference_1'
 json_inputs = json.dumps({'input': [msg_array[0], msg_array[1], msg_array[2], msg_array[3], msg_array[4],
                                     msg_array[5], msg_array[6]]})
 try:
