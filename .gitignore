@@ -7,6 +7,7 @@
 .idea/vcs.xml
 .idea/inspectionProfiles/profiles_settings.xml
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 exam2/data.csv
 exam2/my_inputs.csv
@@ -24,3 +25,5 @@ Model_2/y_train_2.csv
 >>>>>>> add-cloud-computing-code
 =======
 >>>>>>> JetsonNano
+=======
+>>>>>>> SQLDatabase

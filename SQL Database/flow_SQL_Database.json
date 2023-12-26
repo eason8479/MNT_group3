@@ -1,0 +1,120 @@
+[
+    {
+        "id": "b8856fa3ce8d2259",
+        "type": "tab",
+        "label": "Flow 5",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "e0e7384728e4241c",
+        "type": "inject",
+        "z": "b8856fa3ce8d2259",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 40,
+        "wires": [
+            [
+                "50b520f7d804688e",
+                "c5a52df92b870efc"
+            ]
+        ]
+    },
+    {
+        "id": "50b520f7d804688e",
+        "type": "function",
+        "z": "b8856fa3ce8d2259",
+        "name": "function 79",
+        "func": "//Remember to sign up here to confirm that the model was\n//printed successfully.\nvar obj = {}\nobj.printNo = Number(0)\nobj.isSuccessful = Boolean(true)\nmsg.payload = obj\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 40,
+        "wires": [
+            [
+                "b2536adc6a4d6b42"
+            ]
+        ]
+    },
+    {
+        "id": "b2536adc6a4d6b42",
+        "type": "function",
+        "z": "b8856fa3ce8d2259",
+        "name": "function 80",
+        "func": "msg.topic = \"UPDATE [3D Printer] SET Successful = '\" + msg.payload[\"isSuccessful\"] + \"' WHERE [Print No] = '\" + msg.payload[\"printNo\"] + \"'\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 40,
+        "wires": [
+            [
+                "d146aed8deb28623"
+            ]
+        ]
+    },
+    {
+        "id": "d146aed8deb28623",
+        "type": "sqlite",
+        "z": "b8856fa3ce8d2259",
+        "mydb": "36b3531564475675",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 610,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c5a52df92b870efc",
+        "type": "function",
+        "z": "b8856fa3ce8d2259",
+        "name": "function 89",
+        "func": "msg.topic = \"DELETE FROM [3D Printer] WHERE [Nozzle Temperature] = 0.1 OR [Plate Temperature] = 0.1 OR [X-axis Angle] = 0.1 OR [Y-axis Angle] = 0.1\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 80,
+        "wires": [
+            [
+                "d146aed8deb28623"
+            ]
+        ]
+    },
+    {
+        "id": "36b3531564475675",
+        "type": "sqlitedb",
+        "db": "/data/1121FinalProject.db",
+        "mode": "RWC"
+    }
+]
