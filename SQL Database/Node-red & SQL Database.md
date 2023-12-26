@@ -20,3 +20,5 @@ The following four parameters need to be entered manually when printing:
 另一個流則是在成品完成後，主觀認定是否列印成功。其中一個方法節點需要手動調整列印編號以及成功欄位的布林值。
 
 The other flow is to subjectively determine whether the product is successful or not after finishing work. One of the function nodes requires manual adjustment of the Print No and Boolean value of the Successful column.
+
+###### 版本號：v1.0.0
